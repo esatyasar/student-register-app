@@ -18,9 +18,9 @@ class Register(models.Model):
     gender = models.CharField(max_length = 50, choices=GENDER)
     
     PATH = (
-        ("1", "Full Stack Developer"),
-        ("2", "Data Science"),
-        ("3", "AWS")
+        ("Full Stack Developer", "Full Stack Developer"),
+        ("Data Science", "Data Science"),
+        ("AWS", "AWS")
     )
 
     path = models.CharField(max_length = 50, choices=PATH)

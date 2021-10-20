@@ -1,10 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import Register_form
 from .models import Register
 
 # Create your views here.
 def student_form(request):
     form = Register_form()
+    
+    if request.method == "POST":
+        form = Register_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("list")
     context = {
         "form" : form
     }
@@ -13,12 +19,7 @@ def student_form(request):
 def student_list(request):
     
     students = Register.objects.all()
-     
-    if request.method == "POST":
-        form = Register_form(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            
+    
     context = {
         "students" : students
     }
