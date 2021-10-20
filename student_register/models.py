@@ -7,7 +7,7 @@ class Register(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=154)
     phone = models.CharField(max_length=11)
-    number = models.IntegerField()
+    number = models.CharField(max_length=11)
     
     GENDER = (
         ("1", "Female"),

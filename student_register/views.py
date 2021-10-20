@@ -11,9 +11,15 @@ def student_form(request):
     return render (request, "student_register/student_form.html",context)
 
 def student_list(request):
-    student = Register.objects.all()
     
+    students = Register.objects.all()
+     
+    if request.method == "POST":
+        form = Register_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            
     context = {
-        "student" : student
+        "students" : students
     }
     return render (request, "student_register/student_list.html",context)
