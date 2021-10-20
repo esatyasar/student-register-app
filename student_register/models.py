@@ -24,3 +24,6 @@ class Register(models.Model):
     )
 
     path = models.CharField(max_length = 50, choices=PATH)
+    
+    def __str__(self):
+        return self.number + " " + self.name

@@ -1,0 +1,24 @@
+{% extends "student_register/base.html" %}
+
+{% block content %}
+
+<h3>
+    <span>
+        Full Name
+    </span>
+    <span>
+        Path
+    </span>
+</h3>
+<hr>
+
+<ul>
+    {% for student in Register %}
+    <li>
+        <span>{{student.name}}</span><span>{{student.path}}</span> <span>edit</span><span>delete</span>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content%}
