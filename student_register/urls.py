@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from .views import student_form, student_list
+from .views import student_form, student_list,home
 
 urlpatterns = [
     path('student_form/', student_form, name = "form" ),
-     path('student_list/', student_list, name = "list" ),
+    path('student_list/', student_list, name = "list" ),
+    path('', home, name = "home" ),
 ]
