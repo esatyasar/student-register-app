@@ -5,9 +5,6 @@ from .models import Register
 
 
 # Create your views here.
-def home (request):
-    return render(request, "student_register/base.html")
-
 def student_form(request):
     form = Register_form()
     
